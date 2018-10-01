@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   // componentDidMount(){
-  //   fetch(`/users`, {method: "GET"})
+  //   fetch(`/west`, {method: "GET"})
   //   .then((res) => res.text())
   //   .then((text) => JSON.parse(text))
   //   .then((data) => {
