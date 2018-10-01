@@ -7,6 +7,8 @@ header {
 }
 
 .selection_area {
+  margin: auto;
+  width: 50%;
   display: flex;
 }
 
@@ -38,30 +40,32 @@ select {
 .numbers {
   align-items: center;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .button {
-  display: inline-block;
+  width: 10%;
+  margin: auto;
+  justify-content: center;
+  display: flex;
   padding: 8px 25px;
   font-size: 14px;
   cursor: pointer;
   text-align: center;
-  text-decoration: none;
   outline: none;
   color: black;
   background-color: lightgray;
   border: none;
-  border-radius: 10px;
   box-shadow: 0 4px #999;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .button:hover {
-  background-color: #3e8e41
+  background-color: gray;
 }
 
 .button:active {
-  background-color: #3e8e41;
+  background-color: darkgray;
   box-shadow: 0 3px #666;
   transform: translateY(4px);
 }

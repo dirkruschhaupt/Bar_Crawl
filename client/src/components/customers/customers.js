@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './customers.css';
+//import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 class Customers extends Component {
   constructor() {
@@ -17,16 +18,20 @@ class Customers extends Component {
 
   render() {
     return (
-      <div>
-          <h2>Your Bar Crawl:</h2>
-        <ul>
-        {this.state.customers.map(customer => 
-          <li key={customer.id}>Bar: {customer.bar} Address: {customer.address}</li>
-        )}
-        </ul>
-      </div>
+        <div>
+            <h2>Your Bar Crawl:</h2>
+
+   
+
+            <ul>
+                {this.state.customers.map(customer => 
+                    <li key={customer.id}>Bar: {customer.bar} Address: {customer.address}</li>
+                )}
+            </ul>
+        </div>
     );
   }
 }
 
 export default Customers;
+

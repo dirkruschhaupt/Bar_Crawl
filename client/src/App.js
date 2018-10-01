@@ -3,19 +3,38 @@ import './App.css';
 import Customers from './components/customers/customers';
 
 
-let max = this.value;
+// let max = this.value;
 
-for (let i = 0; max <= i; i++) {
-  if (max) {
+// for (let i = 0; max <= i; i++) {
+//   if (max) {
 
-  }
-}
+//   }
+// }
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
+// function getRandomInt(max) {
+//   return Math.floor(Math.random() * Math.floor(max));
+// }
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true,
+      contacts: []
+    }
+  }
+
+  // componentDidMount(){
+  //   fetch(`/users`, {method: "GET"})
+  //   .then((res) => res.text())
+  //   .then((text) => JSON.parse(text))
+  //   .then((data) => {
+  //     this.setState({
+  //       userList: data
+  //     });
+  //   });
+  // }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -25,10 +44,10 @@ class App extends Component {
             <h1>Bar Crawl</h1>
           </header>
         
-          <img src="../images/map.png" alt="map" className="fullWidth profilePictureSize"></img>
+          <img src="/client/src/images/map.png" alt="map" />
 
           <div className="selection_area">
-            <div className="select_area">Select Area:</div>
+            <div className="radio">Select Area:</div>
             <div className="radio">
               <label>
                 <input type="radio" name="area" value="option1" />
