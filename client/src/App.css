@@ -81,3 +81,8 @@ footer {
   font-size: 12px;
   margin-top: 20px;
 }
+
+.downtown {
+  display: flex;
+  justify-content: center;
+}
