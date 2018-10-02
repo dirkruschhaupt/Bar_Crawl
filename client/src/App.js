@@ -3,19 +3,6 @@ import './App.css';
 import Customers from './components/customers/customers';
 import map from './images/newMap.jpg';
 
-
-// let max = this.value;
-
-// for (let i = 0; max <= i; i++) {
-//   if (max) {
-
-//   }
-// }
-
-// function getRandomInt(max) {
-//   return Math.floor(Math.random() * Math.floor(max));
-// }
-
 class App extends Component {
   constructor() {
     super();
