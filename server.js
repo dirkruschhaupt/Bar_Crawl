@@ -35,15 +35,9 @@ app.listen(port, () => `Server running on port ${port}`);
 // let morgan = require('morgan');
 // let bodyParser = require('body-parser');
 
-// let raineyRouter = require('./router/rainey');
 // let barsRouter = require('./router/bars');
-// let dirtyRouter = require('./router/dirty');
-// let eastRouter = require('./router/east');
-// let westRouter = require('./router/west');
-// let fourthRouter = require('./router/fourth');
 
 // app.set('views', path.join(__dirname, 'views'));
-
 
 // app.use(express.static(path.join('public')));
 
@@ -53,12 +47,7 @@ app.listen(port, () => `Server running on port ${port}`);
 // app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(morgan('short'));
 
-// app.use(raineyRouter);
 // app.use(barsRouter);
-// app.use(dirtyRouter);
-// app.use(eastRouter);
-// app.use(westRouter);
-// app.use(fourthRouter);
 
 // app.use(function(req, res) {
 //   res.sendStatus(404);
