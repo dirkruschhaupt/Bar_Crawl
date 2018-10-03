@@ -20,6 +20,14 @@ router.get('/id/:id', (req, res) => {
   });
 });
 
+router.get('/location/:location', (req, res) => {
+  knex('bars')
+  .where('location', req.params.location)
+  .then((bars) => {
+    res.send(bars)
+  });
+});
+
 router.get('/name/:name', (req, res) => {
   knex('bars')
   .where('name', req.params.name)

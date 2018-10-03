@@ -3,14 +3,14 @@ const app = express();
 
 app.get('/api/customers', (req, res) => {
     const customers = [
-        {id: 1, bar: 'Container Bar', address: '90 Rainey St'},
-        {id: 2, bar: 'Icenhauer’s', address: '83 Rainey St'},
-        {id: 3, bar: 'Clive Bar', address: '609 Davis St'},
-        {id: 4, bar: 'Half Step', address: '609 Davis St'},
-        {id: 5, bar: 'Bar 96', address: '96 Rainey St'},
-        {id: 6, bar: 'Unbarlievable', address: '76 Rainey St'},
-        {id: 7, bar: 'Parlor Room', address: '88 Rainey St'},
-        {id: 8, bar: 'Lucille', address: '77 Rainey St'}
+        {id: 1, name: 'Container Bar', address: '90 Rainey St'},
+        {id: 2, name: 'Icenhauer’s', address: '83 Rainey St'},
+        {id: 3, name: 'Clive Bar', address: '609 Davis St'},
+        {id: 4, name: 'Half Step', address: '609 Davis St'},
+        {id: 5, name: 'Bar 96', address: '96 Rainey St'},
+        {id: 6, name: 'Unbarlievable', address: '76 Rainey St'},
+        {id: 7, name: 'Parlor Room', address: '88 Rainey St'},
+        {id: 8, name: 'Lucille', address: '77 Rainey St'}
     ];
     res.json(customers);
 });

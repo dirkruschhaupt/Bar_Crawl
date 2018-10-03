@@ -10,3 +10,8 @@ ul {
     line-height: 2rem;
     border-bottom: 1px dotted #777;
   }
+
+  h2 {
+    margin-top: 70px;
+    text-align: center;
+  }
