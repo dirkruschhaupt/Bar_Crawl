@@ -22,11 +22,22 @@ import './customers.css';
     
 // }
 
+//document.getElementById("demo").innerHTML =
+let num = Math.floor(Math.random() * 98) + 1;
+let i = 0;
+if(i < selected_num) {
+  if(customer.id.num === selected_area && location) {
+    customers = [];
+  }
+  i++;
+}
+
 class Customers extends Component {
   constructor() {
     super();
     this.state = {
       customers: []
+      //userList: []
     };
   }
 
@@ -36,19 +47,53 @@ class Customers extends Component {
       .then(customers => this.setState({customers}, () => console.log('Customers fetched...', customers)));
   }
 
-   render() {
-     return (
-        <div>
-            <h2>Your Bar Crawl:</h2>
+  // componentDidMount(){
+  //   fetch(`/bars`, {method: "GET"})
+  //     .then((res) => res.text())
+  //     .then((text) => JSON.parse(text))
+  //     //.then(res => res.json())
+  //     .then((data) => {
+  //       this.setState({
+  //         userList: data
+  //       });
+  //     });
+  // }
 
-   
 
-            <ul>
-                {this.state.customers.map(customer => 
-                    <li key={customer.id}>Bar: {customer.name} Address: {customer.address}</li>
-                )}
-            </ul>
-        </div>
+  render() {
+    return (
+      <div>
+        <h2>Your Bar Crawl:</h2>
+
+          <ul>
+            {this.state.customers.map(customer => 
+              <li key={customer.id}>Location: {customer.location} Bar: {customer.name} Address: {customer.address}</li>
+            )}
+          </ul>
+
+          {/* {
+            this.state.userList.map(bar =>{
+              return (
+                <tr key={bar.id}>
+                  <td>{bar.id}</td>
+                  <td>{bar.location}</td>
+                  <td>{bar.name}</td>
+                  <td>{bar.address}</td>
+                </tr>
+              );
+            })
+          } */}
+          
+          {/* {this.state.userList.map(data =>
+            <tr key={data.id}>
+              <td>{data.id}</td>
+              <td>{data.location}</td>
+              <td>{data.name}</td>
+              <td>{data.address}</td>
+            </tr>
+          )} */}
+                
+      </div>
     );
   }
 }

@@ -15,32 +15,32 @@ router.get('/', function(req, res) {
 router.get('/id/:id', (req, res) => {
   knex('bars')
   .where('id', req.params.id)
-  .then((bars) => {
-    res.send(bars)
+  .then((bar) => {
+    res.send(bar)
   });
 });
 
 router.get('/location/:location', (req, res) => {
   knex('bars')
   .where('location', req.params.location)
-  .then((bars) => {
-    res.send(bars)
+  .then((bar) => {
+    res.send(bar)
   });
 });
 
 router.get('/name/:name', (req, res) => {
   knex('bars')
   .where('name', req.params.name)
-  .then((bars) => {
-    res.send(bars);
+  .then((bar) => {
+    res.send(bar);
   });
 });
 
 router.get('/address/:address', (req, res) => {
   knex('bars')
   .where('address', req.params.address)
-  .then((bars) => {
-    res.send(bars);
+  .then((bar) => {
+    res.send(bar);
   });
 });
 

@@ -21,7 +21,8 @@ header {
 
 body {
   background-color: lightblue;
-  background: linear-gradient(to right, #33ccff 0%, #66ffff 60%);
+  /* background: linear-gradient(to right, #33ccff 0%, #66ffff 60%); */
+  background: linear-gradient(to right, #c4c9ca 0%, #9ea7aa 60%);
   margin: 0px;
   background-size: 100% 100%;
 }
@@ -69,8 +70,7 @@ select {
 }
 
 footer {
-  position: fixed;
-
+  position: relative;
   bottom: 0;
   width: 100%;
   color: black;
