@@ -22,7 +22,6 @@ class App extends Component {
     e.preventDefault();
   }
 
-  function 
 
   // componentDidMount(){
   //   fetch(`/west`, {method: "GET"})
