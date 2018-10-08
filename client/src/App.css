@@ -8,7 +8,7 @@ header {
 
 .selection_area {
   margin: auto;
-  width: 50%;
+  width: 55%;
   display: flex;
 }
 
@@ -83,4 +83,8 @@ footer {
 .downtown {
   display: flex;
   justify-content: center;
+}
+
+a {
+  color: purple;
 }

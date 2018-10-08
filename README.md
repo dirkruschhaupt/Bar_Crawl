@@ -10,7 +10,6 @@ With this app it will decide for you. Just enter the area of town you want to ba
 - CSS
 - Knex
 - Psql
-- Bootsrap
 - React
 - Google Maps API
 
