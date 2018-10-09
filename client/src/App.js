@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
-//import Customers from './components/customers/customers';
-//import West from './components/customers/customers'
+import List from './components/customers/list';
 import map from './images/newMap.jpg';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      barArea: '',
-      numberBars: ''
+      barArea: null,
+      numberBars: 0,
+      newArea: null,
+      barList: null,
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value
@@ -25,28 +26,22 @@ class App extends Component {
   handleSubmit(event) {
     event.preventDefault();
     let num = this.state.numberBars;
-    let area = this.state.barArea;
-    alert('You selected ' + num + ' bars in the ' + area + ' area.');
+    alert('You selected ' + num + ' bars in the ' + this.state.barArea + ' area.');
     document.getElementById("crawlSetup").reset();
-    //event.preventDefault();
 
-    fetch(`/api/${area}`)
+    fetch(`/api/${this.state.barArea}`)
       .then(res => res.json())
       .then(area => {
-        this.setState({barArea: area})
-        console.log('Fetched...', area);
+        console.log(area);
+        this.setState({
+          barList: area
+        });
       })
       .catch(error => {
         console.error('Error was:', error);
       });
-      return area;
-  }
 
-  // componentDidMount() {
-  //   fetch('/api/west')
-  //     .then(res => res.json())
-  //     .then(west => this.setState({west}, () => console.log('west fetched...', west)));
-  // }
+  }
 
   // generateBars() {
   //   let west = wests[Math.floor(Math.random()*wests.length)];
@@ -54,6 +49,7 @@ class App extends Component {
   // }
 
   render() {
+    console.log('state: ', this.state.barList);
     return (
       <div className="site">
         <form id="crawlSetup" onSubmit={this.handleSubmit}>
@@ -127,17 +123,7 @@ class App extends Component {
           </div>
           <input className="button" type="submit" value="Submit" />
         </form>
-
-
-
-        <div className="output"> 
-          <h2>Your Bar Crawl:</h2>
-            <ul>
-              {this.state.barArea.map(area => 
-                <li key={area.id}>{area.name}</li>
-              )}
-            </ul>
-        </div>
+        {this.state.barList !== null && <List bars={this.state.barList}/>}
 
         <footer>                                      
           <div>Please Drink Responsibly, Don't Drink and Drive. Get an <a onClick={()=> window.open("https://www.uber.com/", "_blank")}>Uber</a> or <a onClick={()=> window.open("https://www.lyft.com/", "_blank")}>Lyft</a></div>
