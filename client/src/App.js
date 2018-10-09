@@ -23,23 +23,35 @@ class App extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     let num = this.state.numberBars;
     let area = this.state.barArea;
     alert('You selected ' + num + ' bars in the ' + area + ' area.');
-    document.getElementById("handleSubmit").reset();
-    event.preventDefault();
+    document.getElementById("crawlSetup").reset();
+    //event.preventDefault();
+
+    fetch(`/api/${area}`)
+      .then(res => res.json())
+      .then(area => {
+        this.setState({barArea: area})
+        console.log('Fetched...', area);
+      })
+      .catch(error => {
+        console.error('Error was:', error);
+      });
+      return area;
   }
 
   // componentDidMount() {
-  //   fetch('/api/ara')
+  //   fetch('/api/west')
   //     .then(res => res.json())
-  //     .then(ara => this.setState({ara}, () => console.log('west fetched...', ara)));
+  //     .then(west => this.setState({west}, () => console.log('west fetched...', west)));
   // }
 
-  generateBars() {
-    let west = west[Math.floor(Math.random()*west.length)];
-    this.setState({west: west});
-  }
+  // generateBars() {
+  //   let west = wests[Math.floor(Math.random()*wests.length)];
+  //   this.setState({west: west});
+  // }
 
   render() {
     return (
@@ -118,14 +130,14 @@ class App extends Component {
 
 
 
-        {/* <div className="output">
+        <div className="output"> 
           <h2>Your Bar Crawl:</h2>
             <ul>
-              {this.state.west.map(west => 
-                <li key={west.id}>{west.name}</li>
+              {this.state.barArea.map(area => 
+                <li key={area.id}>{area.name}</li>
               )}
             </ul>
-        </div> */}
+        </div>
 
         <footer>                                      
           <div>Please Drink Responsibly, Don't Drink and Drive. Get an <a onClick={()=> window.open("https://www.uber.com/", "_blank")}>Uber</a> or <a onClick={()=> window.open("https://www.lyft.com/", "_blank")}>Lyft</a></div>
