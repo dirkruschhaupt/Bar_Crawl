@@ -43,7 +43,6 @@ class List extends Component {
         <ul>
           { this.renderList(this.state.bars) } 
         </ul>
-        <input className="button" type="submit" value="Reset" />
       </div>        
     );
   }
