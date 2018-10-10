@@ -8,7 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       barArea: null,
-      numberBars: 0,
+      numberBars: 1,
       newArea: null,
       barList: null,
     };
@@ -25,8 +25,7 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let num = this.state.numberBars;
-    alert('You selected ' + num + ' bars in the ' + this.state.barArea + ' area.');
+    alert('You selected ' + this.state.numberBars + ' bars in the ' + this.state.barArea + ' area.');
     document.getElementById("crawlSetup").reset();
 
     fetch(`/api/${this.state.barArea}`)
@@ -42,11 +41,6 @@ class App extends Component {
       });
 
   }
-
-  // generateBars() {
-  //   let west = wests[Math.floor(Math.random()*wests.length)];
-  //   this.setState({west: west});
-  // }
 
   render() {
     console.log('state: ', this.state.barList);
@@ -123,7 +117,7 @@ class App extends Component {
           </div>
           <input className="button" type="submit" value="Submit" />
         </form>
-        {this.state.barList !== null && <List bars={this.state.barList}/>}
+        {this.state.barList !== null && <List bars={this.state.barList} num={this.state.numberBars} />}
 
         <footer>                                      
           <div>Please Drink Responsibly, Don't Drink and Drive. Get an <a onClick={()=> window.open("https://www.uber.com/", "_blank")}>Uber</a> or <a onClick={()=> window.open("https://www.lyft.com/", "_blank")}>Lyft</a></div>
