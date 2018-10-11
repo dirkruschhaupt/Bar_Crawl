@@ -7,7 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      barArea: null,
+      barArea: "all",
       numberBars: 1,
       newArea: null,
       barList: null,
